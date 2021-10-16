@@ -1,0 +1,2 @@
+example
+-DCATKIN_DEVEL_PREFIX=/home/lee/test1/devel -DCMAKE_INSTALL_PREFIX=/home/lee/test1/install -G Unix Makefiles
