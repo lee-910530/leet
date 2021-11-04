@@ -1,3 +1,0 @@
-int aa
-int bb
-int rr
