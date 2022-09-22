@@ -39,7 +39,7 @@ class Solution(object):
         x = list(digits[::1])
         return (x)
 
-    def singleNumber(self,nums):
+    def singleNumber(self, nums):
         dic = dict()
         numset = set(nums)
         for i in numset:
@@ -51,20 +51,55 @@ class Solution(object):
             if dic[i] == 1:
                 return (i)
 
+    def search(self, nums, target):
+        l = 0
+        r = len(nums)
+        while (l < r):
+            m = l + (r - l) // 2
+            # print(m)
+            if (nums[m] == target):
+                return m
+            elif (nums[m] < target):
+                l = m + 1
+            else:
+                r = m
+        return -1
 
+    def sortedSquares(self, nums):
+        x = list()
+        for i in nums:
+            x.append(i ** 2)
+        x.sort()
+        return (x)
 
-    # def search(self, nums, target):
+    def rotate(self, nums, k):
+        l = len(nums)
+        nums_new = nums[l - k:] + nums[:l - k]
+        return (nums_new)
+
+    def moveZeroes(self, nums):
+        nums.sort()
+        l = len(nums)
+        amount = nums.count(0)
+        num_new = nums[l - amount - 1:] + nums[:l - amount - 1]
+        return (num_new)
+
+    def reverseString(self, s):
+        return (s[::-1])
+
+    def reverseWords(self, s):
+        new = list()
+        x = s.split(" ")
+        for i in range(len(x)):
+            new.append(x[i][::-1])
+        new = " ".join((new))
+        return (new)
 
 # ...........................................................
-# ss = Solution()
+ss = Solution()
 
 # .........................data..............................
-nums = [-1,0,3,5,9,12]
-target = 9
+s = "foo", t = "bar"
 # .........................main..............................
-for i in range(len(nums)) :
-    if nums[i] == target :
-        print(i)
-
-
-
+if __name__ == '__main__':
+    len(set(s)) == len(set(t)) == len(set(zip(s, t)))
